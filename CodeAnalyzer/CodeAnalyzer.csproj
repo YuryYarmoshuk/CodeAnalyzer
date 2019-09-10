@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F87C556F-21BB-41D2-957A-34C312850375}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CodeAnalyzer</RootNamespace>
+    <AssemblyName>CodeAnalyzer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Hopstarter-Soft-Scraps-Document-Preview.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\CodeAnalyzer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\CodeAnalyzer.Designer.cs">
+      <DependentUpon>CodeAnalyzer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entity\Analyzer.cs" />
+    <Compile Include="Model\Entity\Code.cs" />
+    <Compile Include="Model\Entity\Shredder.cs" />
+    <Compile Include="Model\Interfaces\IAnalyzer.cs" />
+    <Compile Include="Model\Interfaces\IShredder.cs" />
+    <Compile Include="View\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AnalyzeResult.cs" />
+    <Compile Include="View\ErrorList.cs" />
+    <Compile Include="Model\Logic\AnalyzerJava.cs" />
+    <Compile Include="Model\Logic\ShredderJava.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Metrics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Metrics.Designer.cs">
+      <DependentUpon>Metrics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewInformation.cs" />
+    <EmbeddedResource Include="Controller\CodeAnalyzer.resx">
+      <DependentUpon>CodeAnalyzer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Metrics.resx">
+      <DependentUpon>Metrics.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\badQualityRe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\bestQualityRe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\highQualityRe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\veryGoodRe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\MetricsRe.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\badQualityRe.gif" />
+    <None Include="bin\Debug\bestQualityRe.gif" />
+    <None Include="bin\Debug\highQualityRe.gif" />
+    <None Include="bin\Debug\veryGoodRe.gif" />
+    <Content Include="Hopstarter-Soft-Scraps-Document-Preview.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
